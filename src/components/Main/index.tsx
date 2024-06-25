@@ -1,21 +1,26 @@
-import * as S from "./styles";
+import Professional from 'components/Professional'
+import * as S from './styles'
+import { HomeProps } from 'pages'
+import { useCallback, useEffect } from 'react'
+import Link from 'next/link'
 
-const Main = ({
-  title = "React Avançado, novo boilerplate",
-  description = "Typescript",
-}) => (
-  <S.Wrapper>
-    <S.Logo
-      src="/img/logo.svg"
-      alt="Imagem de um átomo e React Avançado escrito ao lado"
-    />
-    <S.Title>{title}</S.Title>
-    <S.Description>{description}</S.Description>
-    <S.Illustration
-      src="/img/hero-illustration.svg"
-      alt="Um desenvolvedor de frente para a tela com código"
-    />
-  </S.Wrapper>
-);
+const Main = ({ professionals }: HomeProps) => {
+  const renderList = useCallback(() => {
+    return (
+      <ul>
+        <h2>Lista profissionais</h2>
+        {professionals.map((professional) => (
+          <li key={professional.id}>
+            <Link href={`/professional/${professional.id}`}>
+              {professional.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
+  }, [professionals])
 
-export default Main;
+  return <S.Wrapper>{renderList()}</S.Wrapper>
+}
+
+export default Main
