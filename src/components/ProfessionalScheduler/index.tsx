@@ -1,8 +1,9 @@
+import SchedulerHeader from 'components/SchedulerHeader'
 import * as S from './styles'
 
 const ProfessionalScheduler = () => (
   <S.Wrapper>
-    <h1>ProfessionalScheduler</h1>
+    <SchedulerHeader />
   </S.Wrapper>
 )
 export default ProfessionalScheduler
