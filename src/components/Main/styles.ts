@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 export const Wrapper = styled.main`
   background-color: #06092b;
@@ -11,6 +12,11 @@ export const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+export const ProfessionalLink = styled(Link)`
+  color: #fff;
+  font-size: 2rem;
 `
 
 export const Logo = styled.img`

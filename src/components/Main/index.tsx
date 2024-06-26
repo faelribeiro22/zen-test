@@ -1,8 +1,6 @@
-import Professional from 'components/Professional'
 import * as S from './styles'
 import { HomeProps } from 'pages'
-import { useCallback, useEffect } from 'react'
-import Link from 'next/link'
+import { useCallback } from 'react'
 
 const Main = ({ professionals }: HomeProps) => {
   const renderList = useCallback(() => {
@@ -11,9 +9,9 @@ const Main = ({ professionals }: HomeProps) => {
         <h2>Lista profissionais</h2>
         {professionals.map((professional) => (
           <li key={professional.id}>
-            <Link href={`/professional/${professional.id}`}>
+            <S.ProfessionalLink href={`/professional/${professional.id}`}>
               {professional.name}
-            </Link>
+            </S.ProfessionalLink>
           </li>
         ))}
       </ul>

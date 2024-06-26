@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.main``
+export const Wrapper = styled.div``
 
 export const Star = styled.span`
   font-size: 2rem;

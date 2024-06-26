@@ -1,26 +1,21 @@
 import Main from 'components/Main'
-import ProfessionalInformation, {
-  ProfessionalInformationProps
-} from 'components/ProfessionalInformation'
+import { ProfessionalInformationProps } from 'components/ProfessionalInformation'
 import { useEffect, useState } from 'react'
 
 export type HomeProps = {
   professionals: ProfessionalInformationProps[]
 }
 
-export default function Home(props: HomeProps) {
+export default function Home() {
   const [professionals, setProfessionals] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3030/api/professionals')
       .then((res) => res.json())
       .then((json) => {
-        console.log('prof', json.professionals)
-        setProfessionals(json.professionals)
+        setProfessionals(json)
       })
   }, [])
 
-  return professionals.length > 0 ? (
-    <Main professionals={professionals} />
-  ) : null
+  return <Main professionals={professionals} />
 }

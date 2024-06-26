@@ -9,10 +9,8 @@ export default function ProfissionalPage() {
   const [professional, setProfessional] = useState({})
 
   const fetchProfessional = useCallback(async () => {
-    console.log('olha o mirage')
     const res = await fetch(`http://localhost:3030/api/professional/${slug}`)
     const professionalsResponse = await res.json()
-    console.log(professionalsResponse)
     setProfessional(professionalsResponse[0])
   }, [slug, setProfessional])
 

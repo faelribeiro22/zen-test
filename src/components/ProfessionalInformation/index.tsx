@@ -26,19 +26,23 @@ const ProfessionalInformation = ({
   title,
   value
 }: ProfessionalInformationProps) => {
-  useEffect(() => {
-    console.log('name', name)
-  }, [])
   return (
     <S.Wrapper>
-      <S.Image src={avatar} alt={`A Photo of ${name}`} />
       <S.Information>
-        <S.ProfessionalName>{name}</S.ProfessionalName>
-        <S.Role>{title}</S.Role> | {location}
-        <StarRating rating={reviewNote} /> ({numbersReviews} reviews)
-        <S.Price>R${value}</S.Price> / <S.Time>{duration} MINUTES</S.Time>
+        <S.Image src={avatar} alt={`A Photo of ${name}`} />
+        <S.Text>
+          <S.ProfessionalName>{name}</S.ProfessionalName>
+          <S.Role>{title}</S.Role> | {location}
+          <S.ReviewInformation>
+            <StarRating rating={reviewNote} />{' '}
+            <span>({numbersReviews} reviews)</span>
+          </S.ReviewInformation>
+          <S.Price>R${value}</S.Price> / <S.Time>{duration} MINUTES</S.Time>
+        </S.Text>
       </S.Information>
-      <S.Description>{description}</S.Description>
+      <S.Description>
+        <p>{description}</p>
+      </S.Description>
     </S.Wrapper>
   )
 }
