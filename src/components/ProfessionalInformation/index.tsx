@@ -1,5 +1,6 @@
 import StarRating from 'components/StarRating'
 import * as S from './styles'
+import { useEffect } from 'react'
 
 export type ProfessionalInformationProps = {
   id: number
@@ -24,14 +25,21 @@ const ProfessionalInformation = ({
   duration,
   title,
   value
-}: ProfessionalInformationProps) => (
-  <S.Wrapper>
-    <img src={avatar} alt={`A Photo of ${name}`} />
-    <S.ProfessionalName>{name}</S.ProfessionalName>
-    <S.Role>{title}</S.Role> | {location}
-    <StarRating rating={reviewNote} /> ({numbersReviews} reviews)
-    <S.Price>R${value}</S.Price> / <S.Time>{duration} MINUTES</S.Time>
-    <S.Description>{description}</S.Description>
-  </S.Wrapper>
-)
+}: ProfessionalInformationProps) => {
+  useEffect(() => {
+    console.log('name', name)
+  }, [])
+  return (
+    <S.Wrapper>
+      <S.Image src={avatar} alt={`A Photo of ${name}`} />
+      <S.Information>
+        <S.ProfessionalName>{name}</S.ProfessionalName>
+        <S.Role>{title}</S.Role> | {location}
+        <StarRating rating={reviewNote} /> ({numbersReviews} reviews)
+        <S.Price>R${value}</S.Price> / <S.Time>{duration} MINUTES</S.Time>
+      </S.Information>
+      <S.Description>{description}</S.Description>
+    </S.Wrapper>
+  )
+}
 export default ProfessionalInformation

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import ProfessionalInformation, {
   ProfessionalInformationProps
 } from 'components/ProfessionalInformation'

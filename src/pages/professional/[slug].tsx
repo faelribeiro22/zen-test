@@ -10,15 +10,15 @@ export default function ProfissionalPage() {
 
   const fetchProfessional = useCallback(async () => {
     console.log('olha o mirage')
-    const res = await fetch(`/api/professional/${slug}`)
+    const res = await fetch(`http://localhost:3030/api/professional/${slug}`)
     const professionalsResponse = await res.json()
-    setProfessional(professionalsResponse)
+    console.log(professionalsResponse)
+    setProfessional(professionalsResponse[0])
   }, [slug, setProfessional])
 
   useEffect(() => {
     if (slug) {
-      console.log('heyyyyy', slug)
-      // fetchProfessional()
+      fetchProfessional()
     }
   }, [slug, fetchProfessional])
 

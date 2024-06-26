@@ -2,11 +2,6 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import GlobalStyle from 'styles/global'
-import { makeServer } from '../mirage'
-
-if (process.env.NODE_ENV === 'development') {
-  makeServer({ environment: 'development' })
-}
 
 function App({ Component, pageProps }: AppProps) {
   return (

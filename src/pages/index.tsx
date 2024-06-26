@@ -12,7 +12,7 @@ export default function Home(props: HomeProps) {
   const [professionals, setProfessionals] = useState([])
 
   useEffect(() => {
-    fetch('/api/professionals')
+    fetch('http://localhost:3030/api/professionals')
       .then((res) => res.json())
       .then((json) => {
         console.log('prof', json.professionals)
