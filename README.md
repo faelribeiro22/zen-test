@@ -19,6 +19,14 @@ yarn install
 
 ## Usage
 
+### Execute the server
+
+```sh
+yarn serve
+```
+
+### Execute the app
+
 ```sh
 yarn dev
 ```
