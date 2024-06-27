@@ -8,7 +8,6 @@ const SchedulerHeader = () => {
     const today = new Date()
     const days = []
     for (let day = 1; day <= maxDays; day++) {
-      console.log('dayyy', day)
       days.push(
         <S.Day>
           <S.DayOfWeek>

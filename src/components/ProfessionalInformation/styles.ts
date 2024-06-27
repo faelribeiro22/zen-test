@@ -13,6 +13,7 @@ export const Image = styled.img`
 
 export const Information = styled.div`
   display: flex;
+  justify-content: space-evenly;
 `
 
 export const ProfessionalName = styled.h1``
@@ -37,7 +38,9 @@ export const Time = styled.span`
 `
 
 export const Description = styled.div`
-  max-width: 10rem;
+  max-width: 35rem;
+  margin-left: 4rem;
+  padding-top: 1rem;
 `
 
 export const Text = styled.div``

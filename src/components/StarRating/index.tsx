@@ -7,11 +7,10 @@ type StarRatingProps = {
 const StarRating = ({ rating }: StarRatingProps) => (
   <S.Wrapper>
     {[...Array(rating)].map((star, index) => {
-      const currentRating = index + 1
-
       return (
         <label key={index}>
           <S.Star
+            data-testid="star"
             className="star"
             style={{
               color: '#ffc107'
